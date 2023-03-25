@@ -2,11 +2,15 @@ package mantis.pages;
 
 import org.openqa.selenium.WebDriver;
 
+import java.net.URISyntaxException;
+
 public class MantisSite {
     private final WebDriver driver;
     private LoginPage loginPage;
     private PasswordPage passwordPage;
     private MainPage mainPage;
+    private ViewIssuesPage viewIssuesPage;
+    private ReportIssuePage reportIssuePage;
 
     public MantisSite(WebDriver driver) {
         this.driver = driver;
@@ -14,11 +18,21 @@ public class MantisSite {
         loginPage = new LoginPage(driver);
         passwordPage = new PasswordPage(driver);
         mainPage = new MainPage(driver);
+        viewIssuesPage = new ViewIssuesPage(driver);
+        reportIssuePage = new ReportIssuePage(driver);
     }
 
     public void login(String login, String password) {
         loginPage.login(login);
         passwordPage.login(password);
+    }
+
+    public void IssuesCreating(String summary, String description) throws URISyntaxException, InterruptedException {
+        reportIssuePage.IssuesCreating(summary, description);
+    }
+
+    public void SearchSummary(String search) throws InterruptedException {
+        viewIssuesPage.FindSummary(search);
     }
 
     public LoginPage getLoginPage() {
@@ -31,5 +45,9 @@ public class MantisSite {
 
     public MainPage getMainPage() {
         return mainPage;
+    }
+
+    public ViewIssuesPage getViewIssuesPage() {
+        return viewIssuesPage;
     }
 }
