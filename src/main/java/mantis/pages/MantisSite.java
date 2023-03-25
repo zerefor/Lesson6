@@ -28,7 +28,7 @@ public class MantisSite {
     }
 
     public void IssuesCreating(String summary, String description) throws URISyntaxException, InterruptedException {
-        reportIssuePage.IssuesCreating(summary, description);
+        reportIssuePage.IssuesCreate(summary, description);
     }
 
     public void SearchSummary(String search) throws InterruptedException {

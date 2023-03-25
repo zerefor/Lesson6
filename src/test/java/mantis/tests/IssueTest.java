@@ -25,7 +25,7 @@ public class IssueTest {
     }
 
     @Test
-    public void issueTest() throws InterruptedException, URISyntaxException {
+    public void IssueZereforTest() throws InterruptedException, URISyntaxException {
         mantisSite = new MantisSite(driver);
         mantisSite.login("admin", "admin20");
         mantisSite.getMainPage().goToReportIssuePage();

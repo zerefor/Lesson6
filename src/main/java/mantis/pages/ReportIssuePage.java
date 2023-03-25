@@ -26,7 +26,7 @@ public class ReportIssuePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void IssuesCreating(String summary, String description) throws InterruptedException, URISyntaxException {
+    public void IssuesCreate(String summary, String description) throws InterruptedException, URISyntaxException {
         summaryField.sendKeys(summary);
         descriptionField.sendKeys(description);
         submit.click();
