@@ -32,12 +32,11 @@ public class IssueTest {
         mantisSite.IssuesCreating("zerefor", "zerefor2");
         mantisSite.getMainPage().goToViewIssuesPage();
         mantisSite.SearchSummary("zerefor");
-
         Thread.sleep(5000);
 
+        mantisSite.getMainPage().goToViewIssuesPage();
         String summary = mantisSite.getViewIssuesPage().getSummary();
         Assertions.assertNotEquals("zerefor", summary);
-
         String viewIssueURL = mantisSite.getViewIssuesPage().getViewIssueURL();
         Assertions.assertEquals("https://academ-it.ru/mantisbt/view_all_bug_page.php", viewIssueURL);
     }

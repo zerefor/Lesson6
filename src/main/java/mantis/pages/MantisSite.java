@@ -28,11 +28,11 @@ public class MantisSite {
     }
 
     public void IssuesCreating(String summary, String description) throws URISyntaxException, InterruptedException {
-        reportIssuePage.IssuesCreate(summary, description);
+        reportIssuePage.issuesCreate(summary, description);
     }
 
     public void SearchSummary(String search) throws InterruptedException {
-        viewIssuesPage.FindSummary(search);
+        viewIssuesPage.deleteSummary(search);
     }
 
     public LoginPage getLoginPage() {

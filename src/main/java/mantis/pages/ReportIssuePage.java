@@ -18,7 +18,7 @@ public class ReportIssuePage {
     private WebElement descriptionField;
 
     @FindBy(css = "[type='submit']")
-    private WebElement submit;
+    private WebElement submitButton;
 
     public ReportIssuePage(WebDriver driver) {
         this.driver = driver;
@@ -26,9 +26,9 @@ public class ReportIssuePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void IssuesCreate(String summary, String description) throws InterruptedException, URISyntaxException {
+    public void issuesCreate(String summary, String description) throws InterruptedException, URISyntaxException {
         summaryField.sendKeys(summary);
         descriptionField.sendKeys(description);
-        submit.click();
+        submitButton.click();
     }
 }
