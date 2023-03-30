@@ -27,11 +27,11 @@ public class MantisSite {
         passwordPage.login(password);
     }
 
-    public void IssuesCreating(String summary, String description) throws URISyntaxException, InterruptedException {
+    public void issuesCreating(String summary, String description) throws URISyntaxException, InterruptedException {
         reportIssuePage.issuesCreate(summary, description);
     }
 
-    public void SearchSummary(String search) throws InterruptedException {
+    public void searchSummary(String search) throws InterruptedException {
         viewIssuesPage.deleteSummary(search);
     }
 

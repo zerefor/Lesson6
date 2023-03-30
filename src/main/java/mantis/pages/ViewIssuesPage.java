@@ -23,7 +23,7 @@ public class ViewIssuesPage {
     private WebElement checkBoxIssue;
 
     @FindBy(css = "[name=action] [value='DELETE']")
-    private WebElement deleteIssue;
+    private WebElement deleteIssueInput;
 
     @FindBy(css = "[value='OK']")
     private WebElement okButton;//
@@ -32,7 +32,7 @@ public class ViewIssuesPage {
     private WebElement deleteButton;
 
     @FindBy(css = "#buglist tbody tr:first-child [class*='summary']")
-    private WebElement firstIssue;
+    private WebElement firstIssueSummary;
 
 
     public ViewIssuesPage(WebDriver driver) {
@@ -46,14 +46,14 @@ public class ViewIssuesPage {
         searchField.sendKeys(search);
         applyButton.click();
         checkBoxIssue.click();
-        deleteIssue.click();
+        deleteIssueInput.click();
         okButton.click();
         deleteButton.click();
         resetFilterButton.click();
     }
 
     public String getSummary() {
-        return firstIssue.getText();
+        return firstIssueSummary.getText();
     }
 
     public String getViewIssueURL() {
