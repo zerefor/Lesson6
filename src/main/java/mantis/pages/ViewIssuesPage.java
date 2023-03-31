@@ -41,7 +41,7 @@ public class ViewIssuesPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void deleteSummary(String search) throws InterruptedException {
+    public void deleteIssue(String search) throws InterruptedException {
         resetFilterButton.click();
         searchField.sendKeys(search);
         applyButton.click();

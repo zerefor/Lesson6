@@ -31,8 +31,8 @@ public class MantisSite {
         reportIssuePage.issuesCreate(summary, description);
     }
 
-    public void searchSummary(String search) throws InterruptedException {
-        viewIssuesPage.deleteSummary(search);
+    public void searchIssue(String search) throws InterruptedException {
+        viewIssuesPage.deleteIssue(search);
     }
 
     public LoginPage getLoginPage() {

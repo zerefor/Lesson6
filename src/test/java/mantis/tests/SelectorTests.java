@@ -6,9 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectorTests extends BaseTest {
-
+    private WebDriverWait wait;
     private MantisSite mantisSite;
 
     @Test
@@ -22,7 +23,7 @@ public class SelectorTests extends BaseTest {
 
         WebElement selectAll = driver.findElement(By.cssSelector("[tabindex='15']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectAll);
-        Thread.sleep(5000);
+        wait = new WebDriverWait(driver, 30, 500);
 
         Assertions.assertTrue(driver.findElement(By.cssSelector("tr:nth-child(13) label:first-child span[class='lbl padding-6']")).isDisplayed());
         Assertions.assertTrue(driver.findElement(By.cssSelector("tr:last-child label [class='lbl padding-6']")).isDisplayed());
