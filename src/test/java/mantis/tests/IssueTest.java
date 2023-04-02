@@ -3,13 +3,12 @@ package mantis.tests;
 import mantis.pages.MantisSite;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.net.URISyntaxException;
 import java.util.concurrent.TimeUnit;
 
 public class IssueTest extends BaseTest {
     private MantisSite mantisSite;
-    private WebDriverWait wait;
 
     @Test
     public void IssueZereforTest() throws InterruptedException, URISyntaxException {
