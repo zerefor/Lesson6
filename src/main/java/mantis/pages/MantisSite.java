@@ -22,7 +22,7 @@ public class MantisSite {
         reportIssuePage = new ReportIssuePage(driver);
     }
 
-    public void login(String login, String password) {
+    public void login(String login, String password) throws InterruptedException {
         loginPage.login(login);
         passwordPage.login(password);
     }
@@ -31,7 +31,7 @@ public class MantisSite {
         reportIssuePage.issuesCreate(summary, description);
     }
 
-    public void searchIssue(String search) throws InterruptedException {
+    public void deleteIssue(String search) throws InterruptedException {
         viewIssuesPage.deleteIssue(search);
     }
 

@@ -17,11 +17,10 @@ public class PasswordPage {
     public PasswordPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 30, 500);
-
         PageFactory.initElements(driver, this);
     }
 
-    public void login(String password) {
+    public void login(String password) throws InterruptedException {
         passwordField.sendKeys(password);
         passwordField.sendKeys(Keys.ENTER);
     }

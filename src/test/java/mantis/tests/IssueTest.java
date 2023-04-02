@@ -4,8 +4,8 @@ import mantis.pages.MantisSite;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.net.URISyntaxException;
+import java.util.concurrent.TimeUnit;
 
 public class IssueTest extends BaseTest {
     private MantisSite mantisSite;
@@ -18,9 +18,9 @@ public class IssueTest extends BaseTest {
         mantisSite.getMainPage().goToReportIssuePage();
         mantisSite.issuesCreating("zerefor", "zerefor2");
         mantisSite.getMainPage().goToViewIssuesPage();
-        mantisSite.searchIssue("zerefor");
-        wait = new WebDriverWait(driver, 30, 500);
+        mantisSite.deleteIssue("zerefor");
         mantisSite.getMainPage().goToViewIssuesPage();
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
         String summary = mantisSite.getViewIssuesPage().getSummary();
         Assertions.assertNotEquals("zerefor", summary);

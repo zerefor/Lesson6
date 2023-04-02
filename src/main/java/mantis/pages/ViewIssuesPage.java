@@ -44,6 +44,7 @@ public class ViewIssuesPage {
     public void deleteIssue(String search) throws InterruptedException {
         resetFilterButton.click();
         searchField.sendKeys(search);
+
         applyButton.click();
         checkBoxIssue.click();
         deleteIssueInput.click();

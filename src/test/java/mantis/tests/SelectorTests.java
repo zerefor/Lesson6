@@ -8,6 +8,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class SelectorTests extends BaseTest {
     private WebDriverWait wait;
     private MantisSite mantisSite;
@@ -20,10 +22,9 @@ public class SelectorTests extends BaseTest {
         mantisSite.getMainPage().goToReportIssuePage();
         Assertions.assertTrue(driver.findElement(By.cssSelector("#platform")).isDisplayed());
         Assertions.assertTrue(driver.findElement(By.cssSelector("[tabindex='8'] [value='177']")).isDisplayed());
-
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         WebElement selectAll = driver.findElement(By.cssSelector("[tabindex='15']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectAll);
-        wait = new WebDriverWait(driver, 30, 500);
 
         Assertions.assertTrue(driver.findElement(By.cssSelector("tr:nth-child(13) label:first-child span[class='lbl padding-6']")).isDisplayed());
         Assertions.assertTrue(driver.findElement(By.cssSelector("tr:last-child label [class='lbl padding-6']")).isDisplayed());
